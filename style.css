@@ -1,0 +1,247 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #fce4ec, #f8bbd0), url(images/generated_image.png); /* Градиентный фон и фоновое изображение */
+    background-size: cover; /* Масштабируем изображение, чтобы оно полностью заполнило фон */
+    background-position: center; /* Центрируем изображение */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px; /* Закругленные углы контейнера */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+    background-color: #ffffff44; /* Белый фон для контейнера */
+}
+
+header {
+    background: #f8bbd0; /* Светло-розовый фон */
+    color: #333;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px; /* Закругленные углы заголовка */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для заголовка */
+}
+
+header h1 {
+    font-size: 2.5em; /* Увеличенный размер шрифта для заголовка */
+}
+
+header p {
+    font-size: 1.2em; /* Увеличенный размер шрифта для подзаголовка */
+}
+
+#reasons {
+    padding: 20px;
+}
+
+#reasons h2 {
+    font-size: 1.8em;
+    color: #d81b60; /* Цвет заголовка секции */
+}
+
+.reasons-container {
+    height: 200px; /* Задайте высоту контейнера */
+    overflow-y: scroll; /* Включите вертикальную прокрутку */
+    border: 1px solid #f48fb1; /* Рамка в нежном цвете */
+    padding: 10px; /* Добавьте отступы внутри контейнера */
+    margin-bottom: 20px; /* Отступ снизу */
+    border-radius: 8px; /* Закругленные углы для контейнера с причинами */
+}
+
+.reasons-container ul {
+    list-style-type: none; /* Убираем маркеры списка */
+}
+
+.reasons-container li {
+    padding: 5px 0; /* Отступы между пунктами списка */
+}
+
+#photo-text {
+    margin-top: 20px; /* Отступ сверху для секции фотографий */
+}
+
+.photo-grid {
+    display: flex;
+    flex-direction: column; /* Располагаем фотографии в столбик */
+}
+
+.photo-item {
+    display: flex; /* Используем flexbox для размещения фотографии и текста рядом */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    margin-bottom: 20px; /* Отступ между фотографиями */
+}
+
+.photo-item.left {
+    flex-direction: row; /* Текст справа от фотографии */
+}
+
+.photo-item.right {
+    flex-direction: row-reverse; /* Текст слева от фотографии */
+}
+
+.photo {
+    width: 300px; /* Ширина изображения */
+    border-radius: 8px; /* Закругленные углы у изображений */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для изображения */
+}
+
+.text-content {
+    margin-left: 20px; /* Отступ слева для текста (для левой стороны) */
+}
+
+.text-content textarea {
+    width: calc(100% - 10px); /* Ширина текстового поля с учетом отступов */
+    height: 50px; /* Высота текстового поля */
+    border-radius: 5px; /* Закругленные углы текстового поля */
+    border: 1px solid #ccc; /* Рамка текстового поля */
+    padding-left: 5px; /* Отступ внутри текстового поля */
+}
+
+.text-content button {
+    margin-top: 5px; /* Отступ сверху для кнопки */
+    background-color: #d81b60; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border-radius: 5px; /* Закругленные углы кнопки */
+    border: none; /* Убираем рамку у кнопки */
+    padding: 10px; /* Отступ внутри кнопки */
+    cursor: pointer; /* Курсор при наведении на кнопку */
+}
+
+.text-content button:hover {
+   background-color:#c2185b ;/* Цвет кнопки при наведении */ 
+}
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: rotate(45deg);
+    z-index: 9999;
+    position: fixed;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px; /* Положение верхней половины сердца */
+}
+
+.heart::after {
+    left: 10px; /* Положение правой половины сердца */
+}
+.photo-slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slider-image {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .popup-content {
+    
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-content img {
+   
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  #showImageText, #closePopup {
+    
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #showImageText:hover, #closePopup:hover {
+    background-color: #c2185b;
+  }
+  .slider-text {
+    font-size: 24px; /* Увеличьте размер шрифта по вашему желанию */
+    color: #333; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 15px; /* Отступ снизу для разделения слайдера и текста */
+}
+.photo-item1 {
+    display: flex; /* Используем flexbox для размещения фотографии и текста рядом */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    margin-bottom: 20px; /* Отступ между фотографиями */
+}
+.photo-item2 {
+    display: flex; /* Используем flexbox для размещения фотографии и текста рядом */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    margin-bottom: 20px; /* Отступ между фотографиями */
+}
+.photo-item3 {
+    display: flex; /* Используем flexbox для размещения фотографии и текста рядом */
+    align-items: flex-start; /* Выравниваем по верхнему краю */
+    margin-bottom: 20px; /* Отступ между фотографиями */
+}
